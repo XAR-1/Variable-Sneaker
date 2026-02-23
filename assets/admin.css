@@ -1,0 +1,877 @@
+/* ─────────────────────────────────────────────
+   Variable Sneaker — Admin Styles
+   ───────────────────────────────────────────── */
+
+/* Override WP admin chrome when on our page */
+body.tools_page_variable-sneaker {
+	background: #111118 !important;
+}
+
+body.tools_page_variable-sneaker #wpcontent,
+body.tools_page_variable-sneaker #wpbody,
+body.tools_page_variable-sneaker #wpbody-content,
+body.tools_page_variable-sneaker .wrap {
+	background: #111118 !important;
+}
+
+body.tools_page_variable-sneaker #wpfooter {
+	display: none;
+}
+
+/* Reset WP admin noise */
+.vsneaker-wrap {
+	--vs-bg: #111118;
+	--vs-surface: #191920;
+	--vs-surface-alt: #1f1f28;
+	--vs-surface-raised: #262630;
+	--vs-border: #2c2c3a;
+	--vs-border-focus: #6c72f1;
+	--vs-text: #e4e5f1;
+	--vs-text-dim: #7b7d94;
+	--vs-text-inv: #111118;
+	--vs-accent: #6c72f1;
+	--vs-accent-hover: #8388f5;
+	--vs-accent-dim: rgba(108, 114, 241, 0.12);
+	--vs-success: #34d399;
+	--vs-success-bg: rgba(52, 211, 153, 0.1);
+	--vs-warn: #fbbf24;
+	--vs-warn-bg: rgba(251, 191, 36, 0.1);
+	--vs-error: #f87171;
+	--vs-error-bg: rgba(248, 113, 113, 0.1);
+	--vs-color-swatch: 22px;
+	--vs-radius: 10px;
+	--vs-radius-sm: 6px;
+	--vs-shadow: 0 1px 3px rgba(0,0,0,.3), 0 1px 2px rgba(0,0,0,.2);
+	--vs-shadow-lg: 0 8px 32px rgba(0,0,0,.45);
+	--vs-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+	--vs-mono: "SF Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
+	--vs-transition: 150ms ease;
+
+	max-width: 1320px;
+	margin: 20px auto;
+	font-family: var(--vs-font);
+	color: var(--vs-text);
+}
+
+.vsneaker-wrap *,
+.vsneaker-wrap *::before,
+.vsneaker-wrap *::after {
+	box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────── */
+
+.vsneaker-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px 24px;
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius);
+	box-shadow: var(--vs-shadow);
+	margin-bottom: 16px;
+}
+
+.vsneaker-header__brand {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+}
+
+.vsneaker-header__brand h1 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+	color: var(--vs-text);
+}
+
+.vsneaker-header__version {
+	font-size: 11px;
+	font-weight: 500;
+	color: var(--vs-text-dim);
+	vertical-align: super;
+}
+
+.vsneaker-header__sub {
+	font-size: 13px;
+	color: var(--vs-text-dim);
+	margin: 2px 0 0;
+}
+
+.vsneaker-logo {
+	flex-shrink: 0;
+}
+
+/* ── Badges ─────────────────────────────────── */
+
+.vsneaker-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 5px 12px;
+	border-radius: 20px;
+	letter-spacing: 0.01em;
+}
+
+.vsneaker-badge--ok {
+	background: var(--vs-success-bg);
+	color: var(--vs-success);
+}
+
+.vsneaker-badge--error {
+	background: var(--vs-error-bg);
+	color: var(--vs-error);
+}
+
+/* ── Body Layout ────────────────────────────── */
+
+.vsneaker-body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+}
+
+@media (max-width: 1100px) {
+	.vsneaker-body {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ── Panels ─────────────────────────────────── */
+
+.vsneaker-panel {
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius);
+	box-shadow: var(--vs-shadow);
+	padding: 20px 24px;
+	display: flex;
+	flex-direction: column;
+}
+
+.vsneaker-panel__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+
+.vsneaker-panel__header h2 {
+	font-size: 15px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: -0.01em;
+	color: #ffffff;
+}
+
+/* ── Textarea ───────────────────────────────── */
+
+.vsneaker-textarea-wrap {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius-sm);
+	overflow: hidden;
+	transition: border-color var(--vs-transition);
+}
+
+.vsneaker-textarea-wrap:focus-within {
+	border-color: var(--vs-border-focus);
+	box-shadow: 0 0 0 2px rgba(108, 114, 241, 0.2);
+}
+
+.vsneaker-textarea {
+	width: 100%;
+	min-height: 340px;
+	padding: 14px 16px;
+	font-family: var(--vs-mono);
+	font-size: 13px;
+	line-height: 1.65;
+	color: var(--vs-text);
+	background: var(--vs-surface);
+	border: none;
+	outline: none;
+	resize: vertical;
+	tab-size: 2;
+}
+
+.vsneaker-textarea::placeholder {
+	color: var(--vs-text-dim);
+	opacity: 0.6;
+}
+
+.vsneaker-textarea-footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 6px 12px;
+	background: var(--vs-surface-alt);
+	border-top: 1px solid var(--vs-border);
+}
+
+/* ── Buttons ────────────────────────────────── */
+
+.vsneaker-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: var(--vs-font);
+	border-radius: var(--vs-radius-sm);
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: all var(--vs-transition);
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.vsneaker-btn:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.vsneaker-btn--primary {
+	background: var(--vs-accent);
+	color: var(--vs-text-inv);
+	border-color: var(--vs-accent);
+}
+
+.vsneaker-btn--primary:hover:not(:disabled) {
+	background: var(--vs-accent-hover);
+}
+
+.vsneaker-btn--secondary {
+	background: var(--vs-surface);
+	color: var(--vs-text);
+	border-color: var(--vs-border);
+}
+
+.vsneaker-btn--secondary:hover:not(:disabled) {
+	background: var(--vs-surface-alt);
+	border-color: var(--vs-border-focus);
+}
+
+.vsneaker-btn--ghost {
+	background: transparent;
+	color: var(--vs-text-dim);
+	padding: 6px 10px;
+	font-size: 12px;
+}
+
+.vsneaker-btn--ghost:hover {
+	color: var(--vs-text);
+	background: var(--vs-surface-alt);
+}
+
+.vsneaker-btn--text {
+	background: transparent;
+	color: var(--vs-text-dim);
+	padding: 4px 8px;
+	font-size: 12px;
+	border: none;
+}
+
+.vsneaker-btn--text:hover {
+	color: var(--vs-text);
+}
+
+/* Loading state */
+.vsneaker-btn--loading {
+	pointer-events: none;
+	position: relative;
+	color: transparent !important;
+}
+
+.vsneaker-btn--loading::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 14px;
+	height: 14px;
+	margin: -7px 0 0 -7px;
+	border: 2px solid currentColor;
+	border-right-color: transparent;
+	border-radius: 50%;
+	animation: vsneaker-spin 0.5s linear infinite;
+	color: var(--vs-text-inv);
+}
+
+.vsneaker-btn--secondary.vsneaker-btn--loading::after {
+	color: var(--vs-text);
+}
+
+@keyframes vsneaker-spin {
+	to { transform: rotate(360deg); }
+}
+
+/* ── Select ─────────────────────────────────── */
+
+.vsneaker-select {
+	padding: 8px 32px 8px 12px;
+	font-size: 13px;
+	font-weight: 500;
+	font-family: var(--vs-font);
+	color: var(--vs-text);
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius-sm);
+	cursor: pointer;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%237b7d94' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	transition: border-color var(--vs-transition);
+}
+
+.vsneaker-select:hover {
+	border-color: var(--vs-border-focus);
+}
+
+/* ── Actions Row ────────────────────────────── */
+
+.vsneaker-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 16px;
+	gap: 12px;
+}
+
+.vsneaker-import-group {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+/* ── Meta / Stats ───────────────────────────── */
+
+.vsneaker-meta {
+	font-size: 12px;
+	color: var(--vs-text-dim);
+}
+
+.vsneaker-stat {
+	font-weight: 600;
+}
+
+.vsneaker-stat--warn {
+	color: var(--vs-warn);
+	margin-left: 8px;
+}
+
+/* ── Preview Area ───────────────────────────── */
+
+.vsneaker-preview-area {
+	flex: 1;
+	min-height: 400px;
+	max-height: 540px;
+	overflow-y: auto;
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius-sm);
+	background: var(--vs-surface);
+}
+
+/* Empty state */
+.vsneaker-empty-state {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	min-height: 300px;
+	text-align: center;
+	color: var(--vs-text-dim);
+	padding: 40px;
+	gap: 12px;
+}
+
+.vsneaker-empty-state p {
+	font-size: 13px;
+	line-height: 1.5;
+	max-width: 260px;
+}
+
+/* Variable rows */
+.vsneaker-var-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.vsneaker-var-item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 16px;
+	border-bottom: 1px solid var(--vs-border);
+	font-size: 13px;
+	transition: background var(--vs-transition);
+}
+
+.vsneaker-var-item:last-child {
+	border-bottom: none;
+}
+
+.vsneaker-var-item:hover {
+	background: var(--vs-surface-alt);
+}
+
+.vsneaker-var-item--dupe {
+	background: rgba(245, 158, 11, 0.06);
+}
+
+.vsneaker-var-item--dupe:hover {
+	background: rgba(245, 158, 11, 0.1);
+}
+
+/* Color swatch */
+.vsneaker-swatch {
+	width: var(--vs-color-swatch);
+	height: var(--vs-color-swatch);
+	border-radius: 4px;
+	border: 1px solid rgba(255,255,255,.08);
+	flex-shrink: 0;
+	box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+/* Size icon */
+.vsneaker-size-icon {
+	width: var(--vs-color-swatch);
+	height: var(--vs-color-swatch);
+	border-radius: 4px;
+	background: var(--vs-surface-alt);
+	border: 1px solid var(--vs-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	font-size: 10px;
+	font-weight: 700;
+	color: var(--vs-text-dim);
+	font-family: var(--vs-mono);
+}
+
+.vsneaker-var-label {
+	font-weight: 600;
+	font-family: var(--vs-mono);
+	font-size: 12.5px;
+	color: var(--vs-text);
+	flex-shrink: 0;
+}
+
+.vsneaker-var-value {
+	font-family: var(--vs-mono);
+	font-size: 12px;
+	color: var(--vs-text-dim);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	flex: 1;
+	min-width: 0;
+}
+
+.vsneaker-var-badge {
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 2px 7px;
+	border-radius: 3px;
+	flex-shrink: 0;
+}
+
+.vsneaker-var-badge--color {
+	background: rgba(168, 85, 247, 0.15);
+	color: #c084fc;
+}
+
+.vsneaker-var-badge--size {
+	background: rgba(56, 189, 248, 0.12);
+	color: #7dd3fc;
+}
+
+.vsneaker-var-badge--dupe {
+	background: var(--vs-warn-bg);
+	color: var(--vs-warn);
+}
+
+/* ── Toast Notifications ────────────────────── */
+
+.vsneaker-toast-container {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	z-index: 99999;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 8px;
+}
+
+.vsneaker-toast {
+	padding: 12px 20px;
+	border-radius: var(--vs-radius-sm);
+	font-size: 13px;
+	font-weight: 600;
+	font-family: var(--vs-font);
+	box-shadow: var(--vs-shadow-lg);
+	animation: vsneaker-toast-in 300ms ease forwards;
+	max-width: 380px;
+}
+
+.vsneaker-toast--success {
+	background: var(--vs-success);
+	color: #fff;
+}
+
+.vsneaker-toast--error {
+	background: var(--vs-error);
+	color: #fff;
+}
+
+.vsneaker-toast--exit {
+	animation: vsneaker-toast-out 250ms ease forwards;
+}
+
+@keyframes vsneaker-toast-in {
+	from { opacity: 0; transform: translateY(12px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vsneaker-toast-out {
+	from { opacity: 1; transform: translateY(0); }
+	to   { opacity: 0; transform: translateY(12px); }
+}
+
+/* ── Footer ─────────────────────────────────── */
+
+.vsneaker-footer {
+	margin-top: 16px;
+	padding: 14px 20px;
+	font-size: 12.5px;
+	line-height: 1.6;
+	color: var(--vs-text-dim);
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius);
+}
+
+.vsneaker-footer svg {
+	display: inline-block;
+	vertical-align: -2px;
+	margin-right: 6px;
+}
+
+.vsneaker-footer strong {
+	color: var(--vs-text);
+}
+
+/* ── Credit Box ────────────────────────────── */
+
+.vsneaker-credit {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	margin-top: 10px;
+	padding: 16px 20px;
+	font-size: 12.5px;
+	line-height: 1.6;
+	color: var(--vs-text-dim);
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius);
+}
+
+.vsneaker-credit__icon {
+	font-size: 22px;
+	flex-shrink: 0;
+}
+
+.vsneaker-credit__text strong {
+	color: var(--vs-text);
+}
+
+.vsneaker-credit__text a {
+	color: var(--vs-accent);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.vsneaker-credit__text a:hover {
+	text-decoration: underline;
+	color: var(--vs-accent-hover);
+}
+
+/* ── Scrollbar ──────────────────────────────── */
+
+.vsneaker-preview-area::-webkit-scrollbar {
+	width: 6px;
+}
+
+.vsneaker-preview-area::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.vsneaker-preview-area::-webkit-scrollbar-thumb {
+	background: var(--vs-border);
+	border-radius: 3px;
+}
+
+.vsneaker-preview-area::-webkit-scrollbar-thumb:hover {
+	background: var(--vs-text-dim);
+}
+
+/* ── Tabs ────────────────────────────────────── */
+
+.vsneaker-tabs {
+	display: flex;
+	gap: 2px;
+	margin-bottom: 16px;
+	background: var(--vs-border);
+	border-radius: var(--vs-radius);
+	padding: 3px;
+	overflow: hidden;
+}
+
+.vsneaker-tab {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	padding: 10px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: var(--vs-font);
+	color: var(--vs-text-dim);
+	background: transparent;
+	border: none;
+	border-radius: calc(var(--vs-radius) - 2px);
+	cursor: pointer;
+	transition: all var(--vs-transition);
+}
+
+.vsneaker-tab:hover {
+	color: var(--vs-text);
+	background: var(--vs-surface-alt);
+}
+
+.vsneaker-tab--active {
+	color: var(--vs-accent);
+	background: var(--vs-surface);
+	box-shadow: 0 1px 4px rgba(0,0,0,.2);
+}
+
+/* Tab content */
+.vsneaker-tab-content {
+	display: none;
+}
+
+.vsneaker-tab-content--active {
+	display: block;
+}
+
+/* ── Sub-tabs ───────────────────────────────── */
+
+.vsneaker-subtabs {
+	display: flex;
+	gap: 0;
+	margin-bottom: 16px;
+	border-bottom: 1px solid var(--vs-border);
+}
+
+.vsneaker-subtab {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	padding: 8px 16px;
+	font-size: 13px;
+	font-weight: 600;
+	font-family: var(--vs-font);
+	color: var(--vs-text-dim);
+	background: transparent;
+	border: none;
+	border-bottom: 2px solid transparent;
+	margin-bottom: -1px;
+	cursor: pointer;
+	transition: all var(--vs-transition);
+}
+
+.vsneaker-subtab:hover {
+	color: var(--vs-text);
+}
+
+.vsneaker-subtab--active {
+	color: var(--vs-accent);
+	border-bottom-color: var(--vs-accent);
+}
+
+.vsneaker-subtab__dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+}
+
+.vsneaker-subtab__dot--color {
+	background: linear-gradient(135deg, #f472b6, #ec4899);
+}
+
+.vsneaker-subtab__dot--size {
+	background: linear-gradient(135deg, #38bdf8, #6c72f1);
+}
+
+.vsneaker-subtab__dot--font {
+	background: linear-gradient(135deg, #a78bfa, #6c72f1);
+}
+
+.vsneaker-subtab__count {
+	font-size: 11px;
+	font-weight: 700;
+	color: var(--vs-text-dim);
+	background: var(--vs-surface-raised);
+	padding: 1px 6px;
+	border-radius: 10px;
+}
+
+/* ── Search ─────────────────────────────────── */
+
+.vsneaker-search {
+	padding: 6px 12px;
+	font-size: 13px;
+	font-family: var(--vs-font);
+	color: var(--vs-text);
+	background: var(--vs-surface);
+	border: 1px solid var(--vs-border);
+	border-radius: var(--vs-radius-sm);
+	outline: none;
+	width: 200px;
+	transition: border-color var(--vs-transition);
+}
+
+.vsneaker-search:focus {
+	border-color: var(--vs-border-focus);
+	box-shadow: 0 0 0 2px rgba(108, 114, 241, 0.15);
+}
+
+.vsneaker-panel__actions {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.vsneaker-panel__desc {
+	font-size: 13px;
+	color: var(--vs-text-dim);
+	line-height: 1.55;
+	margin: 0 0 16px;
+}
+
+/* ── Variable list (taller for Variables tab) ── */
+
+.vsneaker-preview-area--tall {
+	min-height: 500px;
+	max-height: 640px;
+}
+
+/* Delete button in rows */
+.vsneaker-var-delete {
+	opacity: 0;
+	flex-shrink: 0;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	color: var(--vs-text-dim);
+	transition: all var(--vs-transition);
+}
+
+.vsneaker-var-item:hover .vsneaker-var-delete {
+	opacity: 1;
+}
+
+.vsneaker-var-delete:hover {
+	background: rgba(248, 113, 113, 0.12);
+	color: var(--vs-error);
+}
+
+/* Font icon */
+.vsneaker-font-icon {
+	flex-shrink: 0;
+	width: 22px;
+	height: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+	font-size: 11px;
+	font-weight: 800;
+	font-family: var(--vs-mono);
+	color: #e879f9;
+	background: rgba(232, 121, 249, 0.12);
+}
+
+/* Font badge */
+.vsneaker-var-badge--font {
+	background: rgba(232, 121, 249, 0.12);
+	color: #e879f9;
+}
+
+/* Readonly textarea */
+.vsneaker-textarea--readonly {
+	background: var(--vs-bg);
+	cursor: default;
+}
+
+/* Export layout */
+.vsneaker-body--export {
+	grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1100px) {
+	.vsneaker-body--export {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Hidden helper for var list filtering */
+.vsneaker-var-item--hidden {
+	display: none !important;
+}
+
+/* ── Reminder Banner ────────────────────────── */
+
+.vsneaker-reminder {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 16px;
+	margin-bottom: 12px;
+	font-size: 13px;
+	color: var(--vs-warn);
+	background: var(--vs-warn-bg);
+	border: 1px solid rgba(251, 191, 36, 0.2);
+	border-radius: var(--vs-radius-sm);
+	animation: vsneaker-toast-in 300ms ease forwards;
+}
+
+.vsneaker-reminder strong {
+	color: inherit;
+}
+
+.vsneaker-reminder__count {
+	font-weight: 700;
+}
